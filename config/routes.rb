@@ -2,6 +2,10 @@ Rails.application.routes.draw do
   root "pages#home"
   get "about" => "pages#about"
   get "gallery" => "pages#gallery"
+  get "insights" => "pages#insights"
+  get "insights1" => "pages#insights1"
+  get "insights3" => "pages#insights3"
+  get "insights4" => "pages#insights4"
   #get 'pages/home'
 
   # The priority is based upon order of creation: first created -> highest priority.

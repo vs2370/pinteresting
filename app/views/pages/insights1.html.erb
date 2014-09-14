@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['PoS', 'Sales', 'Fee'],
+          ['First Data',  7000,      209],
+          ['LevelUp',  3000,      300],
+          ['Square',  4000,       290],
+          ['IBM',  7000,      400]
+        ]);
+
+        var options = {
+          title: 'PoS analytics',
+          vAxis: {title: 'Service',  titleTextStyle: {color: 'red'}}
+        };
+
+        var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+     Our model says you paid 500$ more in processing fee than industry average. We recommend Scenario: <%= link_to "What if I was using capital one Spark Pay?", insights4_path, class: "btn btn-primary" %>
+  </body>
+</html>

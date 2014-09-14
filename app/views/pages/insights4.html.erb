@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Scenario PoS', 'Predicted sales', 'Fee'],
+          ['CapOne Spark Pay',  6000,      55]
+        ]);
+
+        var options = {
+          title: 'PoS analytics',
+          vAxis: {title: 'Service',  titleTextStyle: {color: 'red'} 
+        }
+        };
+
+        var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+    <a href="https://www.sparkpay.com/"><font size="4">Learn More about Capital One Spark one</font></a>
+    </body>
+</html>
